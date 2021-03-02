@@ -24,8 +24,10 @@ func (m *Backend) GetArgs() miners.BinaryArguments {
 		username = m.customAddress
 		password = m.payout.GetPassword()
 	} else {
+		// Use wallet address (Vertcoin) for payout
+		walletPayout := payouts.NewVTCPayout()
 		username = m.walletAddress
-		password = m.pool.GetPassword()
+		password = walletPayout.GetPassword()
 	}
 
 	return miners.BinaryArguments{
