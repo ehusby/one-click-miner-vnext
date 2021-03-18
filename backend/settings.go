@@ -132,7 +132,7 @@ func (m *Backend) GetPayout() int {
 		if m.GetTestnet() {
 			return 1 // Default Vertcoin on testnet
 		}
-		return 4 // Default Dogecoin on mainnet
+		return 1 // Default Vertcoin on mainnet
 	}
 	return payout
 }

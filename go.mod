@@ -1,4 +1,4 @@
-module github.com/vertiond/verthash-one-click-miner
+module github.com/vertcoin-project/one-click-miner-vnext
 
 go 1.12
 
