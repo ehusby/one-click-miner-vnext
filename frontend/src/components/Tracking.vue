@@ -7,7 +7,8 @@
         <a @click="update">{{ $t('tracking.update_available') }}</a>
       </span> -
       <span>{{ $t('tracking.tracking_enabled') }}.&nbsp;</span>
-      <a @click="disableTracking">{{ $t('tracking.disable_tracking') }}</a> -
+      <!-- <a @click="disableTracking">{{ $t('tracking.disable_tracking') }}</a> - -->
+      <a @click="payoutInformation">{{ $t('tracking.payout_information') }}</a>
       <a @click="reportIssue">{{ $t('tracking.report_issue') }}</a>
     </p>
     <p v-if="!tracking">
@@ -15,9 +16,14 @@
       <span v-if="updateAvailable">
         -
         <a @click="update">{{ $t('tracking.update_available') }}</a>
-      </span> -
-      <span>{{ $t('tracking.tracking_disabled') }}.&nbsp;</span>
+      </span>
+      <!-- </span> - -->
+      <!-- <span>{{ $t('tracking.tracking_disabled') }}.&nbsp;</span>-->
       <!-- <a @click="enableTracking">{{ $t('tracking.enable_tracking') }}</a> -->
+      <span>
+        &nbsp;-
+        <a @click="payoutInformation">{{ $t('tracking.payout_information') }}</a>
+      </span>
       <span>
         &nbsp;-
         <a @click="reportIssue">{{ $t('tracking.report_issue') }}</a>
@@ -53,6 +59,9 @@ export default {
   methods: {
     update: function() {
       this.$emit("update");
+    },
+    payoutInformation: function() {
+      window.backend.Backend.PayoutInformation();
     },
     reportIssue: function() {
       window.backend.Backend.ReportIssue();
