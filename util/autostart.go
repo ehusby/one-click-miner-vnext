@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 
 	"github.com/ProtonMail/go-autostart"
-	"github.com/vertiond/verthash-one-click-miner/logging"
+	"github.com/vertcoin-project/one-click-miner-vnext/logging"
 )
 
 var app *autostart.App
@@ -24,15 +24,15 @@ func init() {
 		}
 	}
 	app = &autostart.App{
-		Name:        "verthash-ocm",
-		DisplayName: "Verthash One-Click miner",
+		Name:        "vertcoin-ocm",
+		DisplayName: "Vertcoin One-Click miner",
 		Exec:        []string{fullPath},
 	}
 
 	if oldFullPath != "" && oldFullPath != fullPath {
 		oldApp := &autostart.App{
-			Name:        "verthash-ocm",
-			DisplayName: "Verthash One-Click miner",
+			Name:        "vertcoin-ocm",
+			DisplayName: "Vertcoin One-Click miner",
 			Exec:        []string{oldFullPath},
 		}
 		if oldApp.IsEnabled() {

@@ -11,9 +11,9 @@ import (
 	"github.com/btcsuite/btcd/txscript"
 	"github.com/btcsuite/btcutil"
 	"github.com/btcsuite/btcutil/base58"
-	"github.com/vertiond/verthash-one-click-miner/logging"
-	"github.com/vertiond/verthash-one-click-miner/networks"
-	"github.com/vertiond/verthash-one-click-miner/util"
+	"github.com/vertcoin-project/one-click-miner-vnext/logging"
+	"github.com/vertcoin-project/one-click-miner-vnext/networks"
+	"github.com/vertcoin-project/one-click-miner-vnext/util"
 	"golang.org/x/crypto/nacl/secretbox"
 	"golang.org/x/crypto/scrypt"
 )
@@ -75,8 +75,8 @@ func loadPublicKey() []byte {
 }
 
 func GetPublicKey() []byte {
-        pub := loadPublicKey()
-        return pub
+	pub := loadPublicKey()
+	return pub
 }
 
 func GetAddress() string {

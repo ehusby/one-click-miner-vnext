@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vertiond/verthash-one-click-miner/logging"
-	"github.com/vertiond/verthash-one-click-miner/util"
+	"github.com/vertcoin-project/one-click-miner-vnext/logging"
+	"github.com/vertcoin-project/one-click-miner-vnext/util"
 )
 
 type TrackingRequest struct {

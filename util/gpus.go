@@ -7,7 +7,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/vertiond/verthash-one-click-miner/logging"
+	"github.com/vertcoin-project/one-click-miner-vnext/logging"
 )
 
 type GPUType int

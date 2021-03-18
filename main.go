@@ -9,11 +9,11 @@ import (
 
 	"github.com/leaanthony/mewn"
 	"github.com/marcsauter/single"
-	"github.com/vertiond/verthash-one-click-miner/backend"
-	"github.com/vertiond/verthash-one-click-miner/logging"
-	"github.com/vertiond/verthash-one-click-miner/networks"
-	"github.com/vertiond/verthash-one-click-miner/tracking"
-	"github.com/vertiond/verthash-one-click-miner/util"
+	"github.com/vertcoin-project/one-click-miner-vnext/backend"
+	"github.com/vertcoin-project/one-click-miner-vnext/logging"
+	"github.com/vertcoin-project/one-click-miner-vnext/networks"
+	"github.com/vertcoin-project/one-click-miner-vnext/tracking"
+	"github.com/vertcoin-project/one-click-miner-vnext/util"
 	"github.com/wailsapp/wails"
 )
 
@@ -64,14 +64,14 @@ func main() {
 	app := wails.CreateApp(&wails.AppConfig{
 		Width:  800,
 		Height: 400,
-		Title:  "Verthash One Click Miner",
+		Title:  "Vertcoin One Click Miner",
 		JS:     js,
 		CSS:    css,
 		Colour: "#131313",
 	})
 
 	alreadyRunning := false
-	s := single.New("verthash-ocm")
+	s := single.New("vertcoin-ocm")
 	if err := s.CheckLock(); err != nil && err == single.ErrAlreadyRunning {
 		alreadyRunning = true
 	} else if err == nil {

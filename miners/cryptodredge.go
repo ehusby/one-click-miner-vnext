@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/vertiond/verthash-one-click-miner/logging"
+	"github.com/vertcoin-project/one-click-miner-vnext/logging"
 )
 
 // Compile time assertion on interface

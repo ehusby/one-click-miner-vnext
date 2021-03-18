@@ -1,4 +1,4 @@
-# Verthash One-Click Miner
+# Vertcoin One-Click Miner
 
 You will be asked to create a password for your built-in Vertcoin wallet. It will create the Verthash datafile and then immediately begin mining to your Vertcoin wallet address.
 
@@ -18,7 +18,7 @@ You will be asked to create a password for your built-in Vertcoin wallet. It wil
 
 *Network and exchange fees may apply
 
-The Verthash One-Click Miner mines [Vertcoin](https://vertcoin.org) and is functionally the same as [upstream](https://github.com/vertcoin-project/one-click-miner-vnext) utilizing a new data directory, `verthash-ocm`.  This is essentially a fancy wrapper for [VerthashMiner](https://github.com/CryptoGraphics/VerthashMiner) which is also open source.
+The Vertcoin One-Click Miner mines [Vertcoin](https://vertcoin.org) and is functionally the same as [upstream](https://github.com/vertcoin-project/one-click-miner-vnext).  This is essentially a fancy wrapper for [VerthashMiner](https://github.com/CryptoGraphics/VerthashMiner) which is also open source.
 
 This software is available for Windows and Linux.
 

@@ -3,9 +3,9 @@ package pools
 import (
 	"fmt"
 
-	"github.com/vertiond/verthash-one-click-miner/networks"
+	"github.com/vertcoin-project/one-click-miner-vnext/networks"
 
-	"github.com/vertiond/verthash-one-click-miner/util"
+	"github.com/vertcoin-project/one-click-miner-vnext/util"
 )
 
 var _ Pool = &P2Proxy{}

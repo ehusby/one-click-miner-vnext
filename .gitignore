@@ -1,8 +1,8 @@
-verthash-ocm
+vertcoin-ocm
 *.zip
 .vscode/
-verthash-ocm.exe
-verthash-ocm-res.syso
-verthash-ocm.exe.manifest
-verthash-ocm.ico
-verthash-ocm.rc
+vertcoin-ocm.exe
+vertcoin-ocm-res.syso
+vertcoin-ocm.exe.manifest
+vertcoin-ocm.ico
+vertcoin-ocm.rc

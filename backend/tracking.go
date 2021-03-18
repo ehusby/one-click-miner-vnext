@@ -1,8 +1,8 @@
 package backend
 
 import (
-	"github.com/vertiond/verthash-one-click-miner/tracking"
-	"github.com/vertiond/verthash-one-click-miner/util"
+	"github.com/vertcoin-project/one-click-miner-vnext/tracking"
+	"github.com/vertcoin-project/one-click-miner-vnext/util"
 )
 
 func (m *Backend) EnableTracking() {
@@ -21,7 +21,7 @@ func (m *Backend) TrackingEnabled() string {
 }
 
 func (m *Backend) ReportIssue() {
-	util.OpenBrowser("https://github.com/vertiond/verthash-one-click-miner/issues/new")
+	util.OpenBrowser("https://github.com/vertcoin-project/one-click-miner-vnext/issues/new")
 }
 
 func (m *Backend) PayoutInformation() {

@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/vertiond/verthash-one-click-miner/logging"
-	"github.com/vertiond/verthash-one-click-miner/networks"
+	"github.com/vertcoin-project/one-click-miner-vnext/logging"
+	"github.com/vertcoin-project/one-click-miner-vnext/networks"
 
-	"github.com/vertiond/verthash-one-click-miner/util"
+	"github.com/vertcoin-project/one-click-miner-vnext/util"
 )
 
 var _ Pool = &P2Pool{}
