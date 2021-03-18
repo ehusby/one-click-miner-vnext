@@ -13,7 +13,7 @@ func (p *DOGEPayout) GetID() int {
 }
 
 func (p *DOGEPayout) GetName() string {
-	return "Verthash OCM Dogecoin Wallet"
+	return "Dogecoin"
 }
 
 func (p *DOGEPayout) GetTicker() string {

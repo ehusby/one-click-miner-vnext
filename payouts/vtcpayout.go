@@ -2,7 +2,7 @@ package payouts
 
 var _ Payout = &VTCPayout{}
 
-type VTCPayout struct {}
+type VTCPayout struct{}
 
 func NewVTCPayout() *VTCPayout {
 	return &VTCPayout{}
@@ -13,7 +13,7 @@ func (p *VTCPayout) GetID() int {
 }
 
 func (p *VTCPayout) GetName() string {
-	return "Vertcoin"
+	return "Verthash OCM Vertcoin Wallet"
 }
 
 func (p *VTCPayout) GetTicker() string {
