@@ -132,7 +132,7 @@ func (m *Backend) GetPayout() int {
 		if m.GetTestnet() {
 			return 1 // Default Vertcoin on testnet
 		}
-		return 4 // Default Dogecoin on mainnet
+		return 1 // Default Vertcoin on mainnet
 	}
 	return payout
 }
@@ -181,6 +181,7 @@ func (m *Backend) PayoutIsVertcoin() bool {
 func (m *Backend) PayoutIsDogecoin() bool {
 	return (m.payout.GetID() == 4)
 }
+
 func (m *Backend) PayoutIsBitcoin() bool {
 	return (m.payout.GetID() == 2)
 }
@@ -195,7 +196,7 @@ func (m *Backend) ValidCustomAddress() bool {
 }
 
 func (m *Backend) UseCustomPayout() bool {
-	// Use the custom config settings only if
+	// Use the custom payout config settings only if
 	// - Zergpool is selected
 	// - non-Vertcoin payout option is selected
 	// - address for payout is valid

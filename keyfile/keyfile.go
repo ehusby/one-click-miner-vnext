@@ -75,8 +75,8 @@ func loadPublicKey() []byte {
 }
 
 func GetPublicKey() []byte {
-        pub := loadPublicKey()
-        return pub
+	pub := loadPublicKey()
+	return pub
 }
 
 func GetAddress() string {

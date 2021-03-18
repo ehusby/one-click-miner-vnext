@@ -54,17 +54,17 @@ func (p *Hashalot) GetFee() float64 {
 	if err != nil {
 		return 2.0
 	}
-	
+
 	pools, ok := jsonPayload["pools"].([]interface{})
 	if !ok {
 		return 2.0
 	}
-	
+
 	pool, ok := pools[0].(map[string]interface{})
 	if !ok {
 		return 2.0
 	}
-	
+
 	fee, ok := pool["poolFeePercent"].(float64)
 	if !ok {
 		return 2.0
