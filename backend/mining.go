@@ -20,18 +20,18 @@ func (m *Backend) GetArgs() miners.BinaryArguments {
 
 	var username string
 	var password string
-	if m.UseZergpoolPayout() {
-		username = m.zergpoolAddress
+	if m.UseCustomPayout() {
+		username = m.customAddress
 		password = m.payout.GetPassword()
 	} else {
-		username = m.vertcoinAddress
+		username = m.walletAddress
 		password = m.pool.GetPassword()
 	}
 
 	return miners.BinaryArguments{
-		StratumUrl:      m.pool.GetStratumUrl(),
-		StratumUsername: username,
-		StratumPassword: password,
+		StratumUrl:       m.pool.GetStratumUrl(),
+		StratumUsername:  username,
+		StratumPassword:  password,
 		EnableIntegrated: m.getSetting("enableIntegrated"),
 	}
 }
@@ -45,7 +45,7 @@ func (m *Backend) GetPoolName() string {
 }
 
 func (m *Backend) GetPayoutTicker() string {
-	if m.UseZergpoolPayout() {
+	if m.UseCustomPayout() {
 		return m.payout.GetTicker()
 	}
 	return "VTC"
@@ -104,7 +104,7 @@ func (m *Backend) StartMining() bool {
 				// Don't refresh this every time since we refresh it every second
 				// and this pulls from Insight. Every 600s is fine (~every 4 blocks)
 				nhr = util.GetNetHash()
-				if !m.PayoutIsVertcoin() && m.UseZergpoolPayout() {
+				if !m.PayoutIsVertcoin() && m.UseCustomPayout() {
 					unitVtcPerBtc = payouts.GetBitcoinPerUnitCoin(vtcPayout.GetName(), vtcPayout.GetTicker(), vtcPayout.GetCoingeckoExchange())
 					if m.PayoutIsBitcoin() {
 						unitPayoutCoinPerBtc = 1
@@ -144,7 +144,7 @@ func (m *Backend) StartMining() bool {
 
 			// Convert average earning from Vertcoin to selected payout coin
 			avgEarningTicker := "VTC"
-			if !m.PayoutIsVertcoin() && m.UseZergpoolPayout() {
+			if !m.PayoutIsVertcoin() && m.UseCustomPayout() {
 				if unitVtcPerBtc != 0 && unitPayoutCoinPerBtc != 0 {
 					avgEarningTicker = m.payout.GetTicker()
 					avgEarning = avgEarning * unitVtcPerBtc / unitPayoutCoinPerBtc
@@ -187,10 +187,10 @@ func (m *Backend) StartMining() bool {
 			m.runtime.Events.Emit("balanceImmature", fmt.Sprintf("%0.8f", float64(bi)/float64(100000000)))
 			logging.Infof("Updating pending pool payout...")
 			var payoutAddr string
-			if m.UseZergpoolPayout() {
-				payoutAddr = m.zergpoolAddress
+			if m.UseCustomPayout() {
+				payoutAddr = m.customAddress
 			} else {
-				payoutAddr = m.vertcoinAddress
+				payoutAddr = m.walletAddress
 			}
 			newPb := m.pool.GetPendingPayout(payoutAddr)
 			pb = newPb
