@@ -138,6 +138,10 @@ func (m *Backend) GetPayout() int {
 }
 
 func (m *Backend) SetPayout(payout int) {
+	// Reset payout dropdown to Vertcoin if custom address is invalid
+	if !m.ValidCustomAddress() {
+		payout = 1
+	}
 	if m.GetPayout() != payout {
 		m.setIntSetting("payout", payout)
 		m.ResetPayout()
